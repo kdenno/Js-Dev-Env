@@ -14,7 +14,7 @@ describe('our first test', () => {
 
 // test index.html file
 describe('index.html', () => {
-    it('should say hello', (done) => {
+    it('should say hello', () => {
         // reference the index.html file and hold it in memory
         const index = fs.readFileSync('./src/index.html', 'utf-8');
         // define jsdom environment
@@ -23,7 +23,7 @@ describe('index.html', () => {
             const h1 = window.getElementsByTagName('h1')[0];
             // now that we have access to our element, lets write our assertions
             expect(h1.innerHTML).to.equal('Hello World');
-            done(); // report the tests now and get ready for the next test
+            // done(); // report the tests now and get ready for the next test
             // close the window to free up the memory
             window.close();
 
